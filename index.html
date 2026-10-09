@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice of Angiyakmin Association</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #8b0000;
+      --primary-dark: #5c0000;
+      --secondary: #d4af37;
+      --accent: #2c5e3b;
+      --bg-dark: #0f1115;
+      --bg-card: #181c24;
+      --text-light: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: rgba(212, 175, 55, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, .brand-title {
+      font-family: 'Cinzel', serif;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: rgba(15, 17, 21, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--text-light);
+    }
+
+    .logo-img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(rgba(15, 17, 21, 0.85), rgba(15, 17, 21, 0.95)),
+                  radial-gradient(circle at center, rgba(139, 0, 0, 0.3) 0%, transparent 70%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--secondary);
+      border-radius: 50px;
+      color: var(--secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.2rem;
+      color: #fff;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: 1px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+    }
+
+    /* Pillars / Mission Grid */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--secondary);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #fff;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Team Grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .team-img-wrapper {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .team-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .team-info {
+      padding: 1.5rem;
+    }
+
+    .team-info h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .team-role {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Registration Form */
+    .form-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: #0f1115;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--secondary);
+      font-size: 1.25rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #090a0d;
+      border-top: 1px solid var(--border-color);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo-container">
+        <div class="brand-title">VOICE OF ANGIYAKMIN</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#pillars">Core Pillars</a></li>
+        <li><a href="#executives">Executive Team</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Empowering Our Community</span>
+      <h1>Voice of Angiyakmin Association</h1>
+      <p>Building unity, upholding cultural heritage, standing on Christian values, and developing youth across all Angiyakmin villages.</p>
+      <a href="#register" class="btn btn-primary">Become a Registered Member</a>
+    </div>
+  </section>
+
+  <!-- About & Mission Section -->
+  <section id="about">
+    <div class="section-header">
+      <h2>Our Mission & Vision</h2>
+      <p>Guiding principles for the development of our villages and future generations</p>
+    </div>
+    <div class="mission-grid">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+        <h3>Unity & Advocacy</h3>
+        <p>Creating strong unity among all Angiyakmin villages and communities, conducting community meetings on vital local issues, and raising our voice against injustice.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-cross"></i></div>
+        <h3>Christian Values</h3>
+        <p>Upholding Christian principles and mutual respect for fellow community members as the foundation for modern growth and spiritual guidance.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-masks-theater"></i></div>
+        <h3>Cultural Heritage</h3>
+        <p>Holding Angiyakmin customs, traditions, and ancestral roots as paramount in all our endeavors and community identity.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>Youth Development</h3>
+        <p>Supporting youth across every aspect of life—social connection, spiritual growth, and educational advancement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Team -->
+  <section id="executives">
+    <div class="section-header">
+      <h2>Executive Leadership</h2>
+      <p>Dedicated community leaders serving the Voice of Angiyakmin Association</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-info">
+          <h3>Kadie JOE</h3>
+          <div class="team-role">Chairman</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-info">
+          <h3>Badoh FUNIM</h3>
+          <div class="team-role">President</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-info">
+          <h3>Stanton FRED</h3>
+          <div class="team-role">Vice President</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-info">
+          <h3>Endricoh MAMINENG</h3>
+          <div class="team-role">Treasurer</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-info">
+          <h3>Mchenson ASONENG</h3>
+          <div class="team-role">Secretary</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-info">
+          <h3>Donatus GIDEON</h3>
+          <div class="team-role">Fundraising Coordinator</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Member Registration -->
+  <section id="register">
+    <div class="section-header">
+      <h2>Membership Registration</h2>
+      <p>Register today to officially join and participate in association activities</p>
+    </div>
+    <div class="form-container">
+      <form id="regForm" onsubmit="handleRegistration(event)">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" required placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="village">Village</label>
+          <input type="text" id="village" required placeholder="Enter your village name">
+        </div>
+        <div class="form-group">
+          <label for="councilWard">Council Ward</label>
+          <input type="text" id="councilWard" required placeholder="Enter your council ward number/name">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number (Optional)</label>
+          <input type="tel" id="phone" placeholder="e.g. +675 74322173">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Registration</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+      <p>Connect with executive leadership regarding meetings, inquiries, or support</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div>
+          <h4>Email Address</h4>
+          <p><a href="mailto:funimbadoh@gmail.com" style="color: var(--secondary); text-decoration: none;">funimbadoh@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+        <div>
+          <h4>Phone Number</h4>
+          <p><a href="tel
